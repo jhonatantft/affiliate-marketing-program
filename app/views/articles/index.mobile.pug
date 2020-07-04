@@ -1,0 +1,17 @@
+extends ../layouts/default
+
+block main
+  h1= title
+
+block content
+  - if (articles.length)
+    each article, index in articles
+      div(class=`py-4 ${index && 'border-top'}`)
+        include article
+
+    - if (pages > 1)
+      ul.pagination
+        != createPagination(pages, page, 'page-item', 'page-link')
+  - else
+    h4.text-muted No articles.&nbsp;
+      a(href="/articles/new") create one

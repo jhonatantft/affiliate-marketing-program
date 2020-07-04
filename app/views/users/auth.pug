@@ -1,0 +1,28 @@
+extends ../layouts/default
+
+block main
+  center
+    h1= title
+
+block content
+  .text-center.my-4
+    a(href="/auth/github")
+      i.fa.fa-github.fa-3x.mx-3
+    | &nbsp;&nbsp;
+    a(href="/auth/twitter")
+      i.fa.fa-twitter.fa-3x.mx-3
+    | &nbsp;&nbsp;
+    a(href="/auth/google")
+      i.fa.fa-google.fa-3x.mx-3
+    | &nbsp;&nbsp;
+    a(href="/auth/linkedin")
+      i.fa.fa-linkedin.fa-3x.mx-3
+    | &nbsp;&nbsp;
+
+  .text-center
+    br
+    h2 OR
+    br
+
+  .login
+    block auth

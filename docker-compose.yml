@@ -1,0 +1,30 @@
+version: "3.2"
+
+services:
+  node:
+    build:
+      context: .
+      dockerfile: ./docker/node/Dockerfile
+    volumes:
+    # https://stackoverflow.com/a/32785014/232619
+      - .:/app
+      - /app/node_modules
+    command: /usr/local/wait-for-it.sh mongo:27017 -- npm start
+    env_file:
+      - .env
+    ports:
+      - 3000:3000
+    networks:
+      - webnet
+    depends_on:
+      - mongo
+  mongo:
+    image: mongo
+    restart: always
+    networks:
+      - webnet
+    volumes:
+      - ./data:/data/db
+
+networks:
+  webnet:
