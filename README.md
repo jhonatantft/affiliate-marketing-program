@@ -1,5 +1,5 @@
 
-[![Build Status](https://travis-ci.org/jhonatantft/affiliate-marketing-program.svg?branch=master)](https://travis-ci.org/jhonatantft/affiliate-marketing-program)
+[![Build Status](https://travis-ci.org/jhonatantft/affiliate-marketing-program.svg)](https://travis-ci.org/jhonatantft/affiliate-marketing-program)
 [![Dependencies](https://img.shields.io/david/jhonatantft/affiliate-marketing-program.svg?style=flat)](https://david-dm.org/jhonatantft/affiliate-marketing-program)
 
 
