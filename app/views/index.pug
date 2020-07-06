@@ -1,0 +1,25 @@
+extends ./layouts/default
+
+block main
+
+block content
+  .position-relative.overflow-hidden.col.text-center.bg-light
+    .col-md-5.p-lg-5.mx-auto.my-5.up-1
+      h1.display-4.font-weight-normal= title
+      p.lead.font-weight-normal O marketing de afiliados é o único canal que atinge e influencia os consumidores em todo o mundo, em todas as partes de sua jornada de compra, on-line e off-line
+      a.btn.btn-outline-secondary(style={cursor: 'pointer'}) Saiba mais
+    .product-device.shadow-sm.d-none.d-md-block
+
+  .shadow-sm.d-md-block
+    .d-md-flex.flex-md-equal.w-100.my-md-3
+      .bg-dark.col.text-center.text-white.overflow-hidden
+        .my-3.py-3
+         h2.display-5 Expanda o alcance da sua marca
+         p Impulsione mais vendas e recompense editores de classe mundial por promover seus produtos / serviços com sucesso
+        .bg-light.shadow-sm.mx-auto(style={width: '80%', height: '100px', 'border-radius': '21px 21px 0 0'})
+
+      .bg-light.col.text-center.overflow-hidden
+        .my-3.py-3
+         h2.display-5 Parceria com as melhores marcas
+         p Ganhe comissões fazendo parceria com marcas reconhecidas do mundo e promovendo com sucesso seus produtos / serviços
+        .bg-dark.shadow-sm.mx-auto(style={width: '80%', height: '100px', 'border-radius': '21px 21px 0 0'})

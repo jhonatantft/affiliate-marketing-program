@@ -2,7 +2,8 @@
 /* Show it is fixed to the top */
 
 body {
-  padding-top: 6rem;
+  /* padding-top: 6rem; */
+  /* color: #f5f5f7; */
 }
 
 /* floating labels */
@@ -71,6 +72,45 @@ body {
   padding-bottom: .25rem;
   font-size: 12px;
   color: #777;
+}
+
+.site-header {
+  background-color: rgba(0, 0, 0, .85);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+  backdrop-filter: saturate(180%) blur(20px);
+}
+
+.site-header a {
+  /* color: #f5f5f7 !important; */
+  transition: ease-in-out color .15s;
+}
+
+.up-1 {
+  z-index: 1;
+}
+
+.product-device {
+  position: absolute;
+  right: 40%;
+  bottom: -30%;
+  width: 300px;
+  height: 540px;
+  /* background-color: #333; */
+  background-color: #33333375;
+  border-radius: 21px;
+  -webkit-transform: rotate(30deg);
+  transform: rotate(30deg);
+}
+
+.product-device::before {
+  position: absolute;
+  top: 10%;
+  right: 10px;
+  bottom: 10%;
+  left: 10px;
+  content: "";
+  background-color: rgba(255, 255, 255, .1);
+  border-radius: 5px;
 }
 
 /* Fallback for Edge

@@ -28,7 +28,7 @@ exports.load = async(function*(req, res, next, id) {
  * List
  */
 
-exports.index = async(function*(req, res) {
+exports.list = async(function*(req, res) {
   const page = (req.query.page > 0 ? req.query.page : 1) - 1;
   const _id = req.query.item;
   const limit = 15;
@@ -42,7 +42,7 @@ exports.index = async(function*(req, res) {
   const articles = yield Article.list(options);
   const count = yield Article.countDocuments();
 
-  res.render('articles/index', {
+  res.render('articles/list', {
     title: 'Articles',
     articles: articles,
     page: page + 1,

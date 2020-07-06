@@ -1,25 +1,19 @@
-nav.navbar.navbar-expand-md.navbar-dark.fixed-top.bg-dark
-  a.navbar-brand(href='/') Digimarket
-  button.navbar-toggler(type='button' data-toggle='collapse' data-target='#navbarCollapse' aria-controls='navbarCollapse' aria-expanded='false' aria-label='Toggle navigation')
-    span.navbar-toggler-icon
-  #navbarCollapse.collapse.navbar-collapse
-    ul.navbar-nav.mr-auto
-      li(class=isActive('/articles/new') ? 'active nav-item' : 'nav-item')
-        a.nav-link(href="/articles/new", title="new article") New
-      - if (req.isAuthenticated())
-        li.nav-item(class=isActive(`/users/${req.user.id}`) && 'active')
-          a.nav-link(href="/users/"+req.user.id, title="Profile") Profile
-        li.nav-item
-          a.nav-link(href="/logout", title="logout") Logout
-      - else
-        li(class=isActive('/login') ? 'active nav-item' : 'nav-item')
-          a.nav-link(href="/login", title="Login") Login
-
-    ul.nav.navbar-nav.navbar-right
-      li.nav-item
-        iframe(src="//ghbtns.com/github-btn.html?user=jhonatantft&repo=affiliate-marketing-program&type=watch&count=true", allowtransparency="true", frameborder="0", scrolling="0", width="120", height="45", style="padding: 15px 0 0 15px;")
-      li.nav-item
-        iframe(src="//ghbtns.com/github-btn.html?user=jhonatantft&repo=affiliate-marketing-program&type=fork&count=true", allowtransparency="true", frameborder="0", scrolling="0", width="120", height="45", style="padding: 15px 0 0 15px;")
-      li.nav-item
-        a.nav-link(href='https://travis-ci.org/github/jhonatantft/affiliate-marketing-program')
-          img(src='https://img.shields.io/travis/jhonatantft/affiliate-marketing-program/master.svg?style=flat', alt='Build Status', data-canonical-src='https://img.shields.io/travis/jhonatantft/affiliate-marketing-program.svg?style=flat', style='max-width:100%;')
+nav.site-header.sticky-top.py-1.navbar.navbar-expand-md.navbar-dark
+  .container
+    a.py-2.navbar-brand(href='/') Digimarket
+    button.navbar-toggler(type='button' data-toggle='collapse' data-target='#navbarCollapse' aria-controls='navbarCollapse' aria-expanded='false' aria-label='Toggle navigation')
+      span.navbar-toggler-icon
+    #navbarCollapse.collapse.navbar-collapse
+      ul.navbar-nav.mr-auto
+        li.nav-item.py-2(class=isActive('/articles/new') ? 'active nav-item' : 'nav-item')
+          a.nav-link(href="/articles", title="new article") Produtos
+        - if (req.isAuthenticated())
+          li.nav-item.py-2
+            a.nav-link(href="/articles/new", title="new article") Cadastrar produto
+          li.nav-item.py-2(class=isActive(`/users/${req.user.id}`) && 'active')
+            a.nav-link(href="/users/" + req.user.id, title="Profile") Profile
+          li.nav-item.py-2
+            a.nav-link(href="/logout", title="logout") Logout
+        - else
+          li.py-2(class=isActive('/login') ? 'active nav-item' : 'nav-item')
+            a.nav-link(href="/login", title="Login") Login

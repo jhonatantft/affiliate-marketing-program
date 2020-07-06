@@ -6,6 +6,7 @@
 
 const users = require('../app/controllers/users');
 const articles = require('../app/controllers/articles');
+const home = require('../app/controllers/home');
 const comments = require('../app/controllers/comments');
 const tags = require('../app/controllers/tags');
 const auth = require('./middlewares/authorization');
@@ -76,7 +77,7 @@ module.exports = function(app, passport) {
 
   // article routes
   app.param('id', articles.load);
-  app.get('/articles', articles.index);
+  app.get('/articles', articles.list);
   app.get('/articles/new', auth.requiresLogin, articles.new);
   app.post('/articles', auth.requiresLogin, articles.create);
   app.get('/articles/:id', articles.show);
@@ -85,7 +86,7 @@ module.exports = function(app, passport) {
   app.delete('/articles/:id', articleAuth, articles.destroy);
 
   // home route
-  app.get('/', articles.index);
+  app.get('/', home.index);
 
   // comment routes
   app.param('commentId', comments.load);

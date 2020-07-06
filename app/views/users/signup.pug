@@ -6,17 +6,17 @@ block auth
   
     .form-label-group
       input#email.form-control(type='email' name='email' placeholder='Email address' required='' autofocus='' value=user.email)
-      label(for='email') Email address
+      label(for='email') Email
     .form-label-group
       input#password.form-control(type='password' name='password' placeholder='Password' required='')
-      label(for='password') Password
+      label(for='password') Senha
     .form-label-group
       input#name.form-control(type='text' name='name' placeholder='Full Name' required='' value=user.name)
-      label(for='name') Full Name
+      label(for='name') Nome completo
     .form-label-group
       input#password.form-control(type='text' name='username' placeholder='Username' value=user.username)
       label(for='username') Username
-    button.btn.btn-lg.btn-primary.btn-block(type='submit') Sign up
+    button.btn.btn-lg.btn-primary.btn-block(type='submit') Criar conta
     .my-3.text-center
-      | or 
-      a.show-signup(href="/login") Log in
+      | ou 
+      a.show-signup(href="/login") Fazer login
