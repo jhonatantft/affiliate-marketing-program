@@ -1,8 +1,8 @@
 const mongoose = require('mongoose');
-const { wrap: async } = require('co');
-const only = require('only');
+// const { wrap: async } = require('co');
+// const only = require('only');
 const Article = mongoose.model('Article');
-const assign = Object.assign;
+// const assign = Object.assign;
 
 /**
  * Load
