@@ -22,6 +22,7 @@ const UserSchema = new Schema({
   hashed_password: { type: String, default: '' },
   salt: { type: String, default: '' },
   authToken: { type: String, default: '' },
+  articles: { type: String, default: '' },
   twitter: {},
   github: {},
   google: {},

@@ -25,7 +25,7 @@ exports.index = async(function*(req, res) {
   const articles = yield Article.list(options);
   const count = yield Article.countDocuments(criteria);
 
-  res.render('articles/index', {
+  res.render('articles/list', {
     title: 'Articles tagged ' + req.params.tag,
     articles: articles,
     page: page + 1,

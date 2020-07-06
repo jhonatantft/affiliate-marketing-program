@@ -34,6 +34,13 @@ const ArticleSchema = new Schema({
       createdAt: { type: Date, default: Date.now }
     }
   ],
+  assignedUsers: [
+    {
+      user: { type: Schema.ObjectId, ref: 'User' },
+      viewCount: { type: String, default: '0' },
+      createdAt: { type: Date, default: Date.now }
+    }
+  ],
   tags: { type: [], get: getTags, set: setTags },
   image: {
     cdnUri: String,
@@ -94,6 +101,24 @@ ArticleSchema.methods = {
       self.save(cb);
     }, 'article');
     */
+  },
+
+  /**
+   * Assing user
+   *
+   * @param {User} user
+   * @param {Object} comment
+   * @api private
+   */
+
+  assignUser: function(user) {
+    this.assignedUsers.push({
+      user: user._id
+    });
+
+    if (!this.user.email) this.user.email = 'email@product.com';
+
+    return this.save();
   },
 
   /**

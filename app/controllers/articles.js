@@ -118,7 +118,7 @@ exports.update = async(function*(req, res) {
 exports.show = function(req, res) {
   res.render('articles/show', {
     title: req.article.title,
-    article: req.article
+    article: req
   });
 };
 

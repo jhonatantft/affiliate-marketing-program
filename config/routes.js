@@ -8,6 +8,7 @@ const users = require('../app/controllers/users');
 const articles = require('../app/controllers/articles');
 const home = require('../app/controllers/home');
 const comments = require('../app/controllers/comments');
+const usersOnArticle = require('../app/controllers/usersOnArticle');
 const tags = require('../app/controllers/tags');
 const auth = require('./middlewares/authorization');
 
@@ -43,6 +44,7 @@ module.exports = function(app, passport) {
     users.session
   );
   app.get('/users/:userId', users.show);
+
   app.get('/auth/github', pauth('github', fail), users.signin);
   app.get('/auth/github/callback', pauth('github', fail), users.authCallback);
   app.get('/auth/twitter', pauth('twitter', fail), users.signin);
@@ -84,6 +86,23 @@ module.exports = function(app, passport) {
   app.get('/articles/:id/edit', articleAuth, articles.edit);
   app.put('/articles/:id', articleAuth, articles.update);
   app.delete('/articles/:id', articleAuth, articles.destroy);
+
+  // Retrieve article to user
+  app.post(
+    '/assignUser/:id/:userId',
+    auth.requiresLogin,
+    usersOnArticle.create
+  );
+  app.get(
+    '/assignUser/:id/:userId/view',
+    auth.requiresLogin,
+    usersOnArticle.view
+  );
+  app.get(
+    '/assignUser/:id/:userId',
+    auth.requiresLogin,
+    usersOnArticle.goToArticle
+  );
 
   // home route
   app.get('/', home.index);
